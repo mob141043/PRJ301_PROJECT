@@ -11,6 +11,6 @@ import java.io.Serializable;
  *
  * @author ADMIN
  */
-public class BaseEntity implements Serializable{
-    
+public class BaseEntity implements Serializable {
+
 }

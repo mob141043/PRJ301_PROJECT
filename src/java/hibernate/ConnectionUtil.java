@@ -17,7 +17,7 @@ public class ConnectionUtil {
    * 
    * @return a SessionFactory
    */
-  public static SessionFactory getSessionFactory() {
+  public static SessionFactory buildSessionFactory() {
     if (factory == null) {
       Configuration config = new Configuration();
       config.configure("hibernate\\hibernate.cfg.xml");
@@ -28,7 +28,7 @@ public class ConnectionUtil {
   }
   
     public static void main(String[] args) {
-        getSessionFactory();
+        buildSessionFactory();
     }
 
 }
