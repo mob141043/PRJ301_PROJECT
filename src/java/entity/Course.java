@@ -13,23 +13,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "CLASS")
+@Table(name = "COURSE")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class Class extends BaseEntity {
+public class Course extends BaseEntity {
 
     @Id
-    @Column(name = "CLASS_NO")
-    private int classNo;
+    @Column(name = "COURSE_NO")
+    private int courseNo;
 
-    @Column(name = "CLASS_NAME")
-    private String className;
+    @Column(name = "COURSE_NAME")
+    private String courseName;
 
-    @OneToMany(mappedBy = "classVar", fetch = FetchType.LAZY)
-    private List<StudentClass> studentClasses;
-
-    @OneToMany(mappedBy = "classVar", fetch = FetchType.LAZY)
-    private List<TeacherClass> teacherClasses;
+    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
+    private List<TeacherClass> classes;
 }

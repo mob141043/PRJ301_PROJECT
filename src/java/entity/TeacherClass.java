@@ -12,20 +12,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "STUDENT_CLASS")
+@Table(name = "TEACHER_CLASS")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class StudentClass extends BaseEntity {
+public class TeacherClass extends BaseEntity {
 
     @Id
-    @Column(name = "STUDENT_CLASS_NO")
-    private int studentClassNo;
+    @Column(name = "TEACHER_CLASS_NO")
+    private int teacherClassNo;
 
     @ManyToOne
-    @JoinColumn(name = "STUDENT_NO", nullable = false)
-    private Student student;
+    @JoinColumn(name = "TEACHER_NO", nullable = false)
+    private Teacher teacher;
 
     @ManyToOne
     @JoinColumn(name = "ClASS_NO", nullable = false)
