@@ -1,5 +1,6 @@
 package entity;
 
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,22 +13,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "TEACHER_CLASS")
+@Table(name = "SCHEDULE")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class TeacherClass extends BaseEntity {
+public class Schedule extends BaseEntity {
 
     @Id
-    @Column(name = "TEACHER_CLASS_NO")
-    private int teacherClassNo;
-
+    @Column(name = "CLASS_NO")
+    private int scheduleNo;
+    
     @ManyToOne
-    @JoinColumn(name = "TEACHER_NO", nullable = false)
-    private Teacher teacher;
+    @JoinColumn(name = "GROUP_NO", nullable = false)
+    private Group group;
 
-    @ManyToOne
-    @JoinColumn(name = "ClASS_NO", nullable = false)
-    private Class classVar;
+    
+    private Date scheduleDate;
 }

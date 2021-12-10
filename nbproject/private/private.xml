@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/student_attendance/src/java/repository/impl/AccountRepositoryImpl.java</file>
-            <file>file:/D:/student_attendance/src/java/repository/impl/BaseRepository.java</file>
-            <file>file:/D:/student_attendance/src/java/hibernate/hibernate.cfg.xml</file>
-            <file>file:/D:/student_attendance/src/java/entity/Account.java</file>
-            <file>file:/D:/student_attendance/src/java/repository/AccountRepository.java</file>
-            <file>file:/D:/student_attendance/src/java/hibernate/ConnectionUtil.java</file>
-            <file>file:/D:/student_attendance/src/java/model/AccountRequestDTO.java</file>
-            <file>file:/D:/student_attendance/src/java/model/AccountDTO.java</file>
-            <file>file:/D:/student_attendance/src/java/entity/StudentClass.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

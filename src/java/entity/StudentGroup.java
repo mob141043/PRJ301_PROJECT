@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package entity;
 
 import javax.persistence.Column;
@@ -12,22 +17,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "STUDENT_CLASS")
+@Table(name = "STUDENT_GROUP")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class StudentClass extends BaseEntity {
+public class StudentGroup extends BaseEntity {
 
     @Id
-    @Column(name = "STUDENT_CLASS_NO")
-    private int studentClassNo;
+    @Column(name = "TEACHER_GROUP_NO")
+    private int teacherGroupNo;
 
     @ManyToOne
     @JoinColumn(name = "STUDENT_NO", nullable = false)
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "ClASS_NO", nullable = false)
-    private Class classVar;
+    @JoinColumn(name = "GROUP_NO", nullable = false)
+    private Group group;
 }

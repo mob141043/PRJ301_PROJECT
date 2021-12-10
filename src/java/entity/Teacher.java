@@ -28,7 +28,8 @@ public class Teacher extends BaseEntity {
 
     @Column(name = "TEACHER_NAME")
     private String teacherName;
+    
+    @OneToMany(mappedBy = "teacher")
+    private List<TeacherGroup> teacherGroups;
 
-    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<TeacherClass> classes;
 }

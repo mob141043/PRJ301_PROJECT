@@ -9,12 +9,14 @@
         <property name="hibernate.connection.password">1234</property>
         <property name="dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
         <property name="hibernate.show_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <mapping class="entity.Student" /> 
         <mapping class="entity.Class" />
-        <mapping class="entity.StudentClass" />
+        <mapping class="entity.Course" />
+<!--        <mapping class="entity.StudentClass" />-->
         <mapping class="entity.Teacher" />
-        <mapping class="entity.TeacherClass" />
+<!--        <mapping class="entity.TeacherClass" />-->
         <mapping class="entity.Account" />
+        <mapping class="entity.Group" />
     </session-factory>
 </hibernate-configuration>

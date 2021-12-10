@@ -32,7 +32,7 @@ public class Student extends BaseEntity {
     @Column(name = "STUDENT_CODE", nullable = false, unique = true)
     private String studentCode;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    private List<StudentClass> studentClasses;
+    @OneToMany(mappedBy = "student")
+    private List<StudentGroup> studentGroups;
 
 }

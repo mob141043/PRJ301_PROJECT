@@ -28,8 +28,5 @@ public class Class extends BaseEntity {
     private String className;
 
     @OneToMany(mappedBy = "classVar", fetch = FetchType.LAZY)
-    private List<StudentClass> studentClasses;
-
-    @OneToMany(mappedBy = "classVar", fetch = FetchType.LAZY)
-    private List<TeacherClass> teacherClasses;
+    private List<Group> groups;
 }

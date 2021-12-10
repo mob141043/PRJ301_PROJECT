@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +28,6 @@ public class Course extends BaseEntity {
     @Column(name = "COURSE_NAME")
     private String courseName;
 
-    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private List<TeacherClass> classes;
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    private List<Group> groups;
 }
