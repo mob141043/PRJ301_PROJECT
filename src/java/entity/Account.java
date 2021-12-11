@@ -2,24 +2,29 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "ACCOUNT")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 public class Account extends BaseEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ACCOUNT_NO")
-    private int accountNo;
+    private Long accountNo;
 
     @Column(name = "USER_NAME", unique = true)
     private String username;
@@ -28,5 +33,5 @@ public class Account extends BaseEntity {
     private String password;
 
     @Column(name = "TEACHER_NO", unique = true, updatable = false, insertable = false)
-    private int teacherNo;
+    private Long teacherNo;
 }

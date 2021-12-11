@@ -4,9 +4,33 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controller.account.LoginController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListScheduleController</servlet-name>
+        <servlet-class>controller.teacher.ListScheduleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListStudentController</servlet-name>
+        <servlet-class>controller.group.ListStudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TakeAttendanceController</servlet-name>
+        <servlet-class>controller.student.TakeAttendanceController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/account/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListScheduleController</servlet-name>
+        <url-pattern>/teacher/list-schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListStudentController</servlet-name>
+        <url-pattern>/group/student-list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TakeAttendanceController</servlet-name>
+        <url-pattern>/student/take-attendance</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

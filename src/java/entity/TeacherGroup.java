@@ -7,6 +7,8 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,8 +28,9 @@ import lombok.NoArgsConstructor;
 public class TeacherGroup extends BaseEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TEACHER_GROUP_NO")
-    private int teacherGroupNo;
+    private Long teacherGroupNo;
 
     @ManyToOne
     @JoinColumn(name = "TEACHER_NO", nullable = false)

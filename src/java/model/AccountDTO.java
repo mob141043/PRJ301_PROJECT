@@ -17,11 +17,11 @@ import lombok.ToString;
 @ToString
 public class AccountDTO implements Serializable {
 
-    private int accountNo;
-    
+    private Long accountNo;
+
     private String username;
 
     private String password;
-    
-    private int teacherNo;
+
+    private Long teacherNo;
 }

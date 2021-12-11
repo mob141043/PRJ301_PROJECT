@@ -7,6 +7,8 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,7 +28,8 @@ public class StudentGroup extends BaseEntity {
 
     @Id
     @Column(name = "TEACHER_GROUP_NO")
-    private int teacherGroupNo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long teacherGroupNo;
 
     @ManyToOne
     @JoinColumn(name = "STUDENT_NO", nullable = false)
