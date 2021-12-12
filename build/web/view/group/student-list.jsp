@@ -26,7 +26,7 @@
             <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
             <div class="container">
-                <h3 class="text-center">Take Attendance for ${className}</h3>
+                <h3 class="text-center">Take Attendance</h3>
                 <hr>
                 <br>
                 <form method="POST" action="${pageContext.request.contextPath}/student/take-attendance">

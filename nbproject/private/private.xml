@@ -2,6 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/student_attendance/web/view/group/student-list.jsp</file>
+            <file>file:/D:/student_attendance/web/view/teacher/schedule-list.jsp</file>
+            <file>file:/D:/student_attendance/src/java/service/StudentService.java</file>
+            <file>file:/D:/student_attendance/src/java/repository/impl/StudentAttendanceRepositoryImpl.java</file>
+            <file>file:/D:/student_attendance/src/java/model/StudentDTO.java</file>
+            <file>file:/D:/student_attendance/src/java/service/impl/StudentAttendanceServiceImpl.java</file>
+            <file>file:/D:/student_attendance/src/java/controller/student/TakeAttendanceController.java</file>
+            <file>file:/D:/student_attendance/src/java/entity/StudentGroup.java</file>
+            <file>file:/D:/student_attendance/src/java/repository/StudentRepository.java</file>
+            <file>file:/D:/student_attendance/src/java/model/SearchScheduleRequestDTO.java</file>
+            <file>file:/D:/student_attendance/src/java/service/StudentAttendanceService.java</file>
+            <file>file:/D:/student_attendance/src/java/service/impl/StudentServiceImpl.java</file>
+            <file>file:/D:/student_attendance/src/java/repository/impl/StudentRepositoryImpl.java</file>
+            <file>file:/D:/student_attendance/src/java/repository/impl/ScheduleRepositoryImpl.java</file>
+            <file>file:/D:/student_attendance/src/java/repository/StudentAttendanceRepository.java</file>
+            <file>file:/D:/student_attendance/src/java/controller/group/ListStudentController.java</file>
+        </group>
     </open-files>
 </project-private>

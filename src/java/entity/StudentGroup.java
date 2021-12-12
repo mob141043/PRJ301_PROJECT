@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 public class StudentGroup extends BaseEntity {
 
     @Id
-    @Column(name = "TEACHER_GROUP_NO")
+    @Column(name = "STUDENT_GROUP_NO")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long teacherGroupNo;
 
