@@ -15,7 +15,7 @@
                  style="background-color: tomato">
                 <div class="text-left">
                     <a class="navbar-brand"> Student Attendance Management </a>
-                    <a  style="float: right;margin-left: 1460px" href="https://www.javaguides.net" class="navbar-brand text-right"> Log Out </a>
+                    <a  style="float: right;margin-left: 1460px" href="${pageContext.request.contextPath}/account/logout" class="navbar-brand text-right"> Log Out </a>
                 </div>
 
             </nav>
@@ -50,7 +50,7 @@
                         <input type="hidden" value="${s.studentNo}" name="studentNo"/>
                             <tr>
                                 <td><c:out value="${index}"/></td>
-                                <td><img src="https://rtoacademy.com/wp-content/uploads/Yasuo-Splash-Art-1-1-480x450.png" style="height: 146px;width: 111px"/></td>
+                                <td><img src="${s.studentImage}" style="height: 146px;width: 111px"/></td>
                                 <td><c:out value="${s.studentCode}" /></td>
                                 <td><c:out value="${s.studentName}" /></td>
                                 <td><input type="radio"  name="attendanceStatus${s.studentNo}" ${s.attendanceStatus.value.equals("P") ? 'checked':''} value="P">Present</td>
