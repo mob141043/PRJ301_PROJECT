@@ -12,6 +12,7 @@ import entity.StudentAttendance;
 import hibernate.ConnectionUtil;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -37,13 +38,13 @@ public class StudentAttendanceRepositoryImpl extends BaseRepository implements S
         if (MapUtils.isEmpty(studentAttendanceStatusMap)) {
             return 0;
         }
+        
+        Map<Long, StudentAttendance> studentAttendanceMap = new HashMap<>();
         List<StudentAttendance> studentAttendances = getListByScheduleNo(scheduleNo);
-        if (CollectionUtils.isEmpty(studentAttendances)) {
-            return 0;
+        if (CollectionUtils.isNotEmpty(studentAttendances)) {
+            studentAttendanceMap = studentAttendances.stream()
+                    .collect(Collectors.toMap(StudentAttendance::getStudentNo, Function.identity()));
         }
-
-        Map<Long, StudentAttendance> studentAttendanceMap = studentAttendances.stream()
-                .collect(Collectors.toMap(StudentAttendance::getStudentNo, Function.identity()));
 
         try {
             session = sessionFactory.openSession();
