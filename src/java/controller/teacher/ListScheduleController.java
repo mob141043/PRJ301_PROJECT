@@ -26,6 +26,13 @@ public class ListScheduleController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        AccountDTO accountDTO = (AccountDTO) session.getAttribute("account");
+        if (accountDTO != null) {
+            List<ScheduleDTO> scheduleDTOs = scheduleService.getListScheduleByTeacherNo(accountDTO.getTeacherNo());
+            request.setAttribute("scheduleDTOs", scheduleDTOs);
+            request.getRequestDispatcher("../view/teacher/schedule-list.jsp").forward(request, response);
+        }
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
@@ -43,29 +50,13 @@ public class ListScheduleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        AccountDTO accountDTO = (AccountDTO) session.getAttribute("account");
-        if (accountDTO != null) {
-            List<ScheduleDTO> scheduleDTOs = scheduleService.getListScheduleByTeacherNo(accountDTO.getTeacherNo());
-            request.setAttribute("scheduleDTOs", scheduleDTOs);
-            request.getRequestDispatcher("../view/teacher/schedule-list.jsp").forward(request, response);
-        }
         processRequest(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        AccountDTO accountDTO = (AccountDTO) session.getAttribute("account");
-        if (accountDTO != null) {
-            List<ScheduleDTO> scheduleDTOs = scheduleService.getListScheduleByTeacherNo(accountDTO.getTeacherNo());
-            request.setAttribute("scheduleDTOs", scheduleDTOs);
-            request.getRequestDispatcher("../view/teacher/schedule-list.jsp").forward(request, response);
-        }
         processRequest(request, response);
-
     }
 
     private ScheduleService scheduleService = new ScheduleServiceImpl();

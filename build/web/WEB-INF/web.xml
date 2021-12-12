@@ -16,6 +16,10 @@
         <servlet-name>TakeAttendanceController</servlet-name>
         <servlet-class>controller.student.TakeAttendanceController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller.account.LogoutController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/account/login</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>TakeAttendanceController</servlet-name>
         <url-pattern>/student/take-attendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/account/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -15,7 +15,7 @@
                  style="background-color: tomato">
                 <div class="text-left">
                     <a class="navbar-brand"> Student Attendance Management </a>
-                    <a href="https://www.javaguides.net" class="navbar-brand text-right"> Log Out </a>
+                    <a  style="float: right;margin-left: 1460px" href="${pageContext.request.contextPath}/account/logout" class="navbar-brand text-right"> Log Out </a>
                 </div>
                 
             </nav>

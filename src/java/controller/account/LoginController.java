@@ -40,7 +40,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("../view/login.jsp");
+        response.sendRedirect("../view/account/login.jsp");
     }
 
     /**
@@ -64,7 +64,7 @@ public class LoginController extends HttpServlet {
             response.sendRedirect("../teacher/list-schedule");
         } else {
             request.setAttribute("errorMessage", "Username or Password is incorrect");
-            request.getRequestDispatcher("../view/login.jsp").forward(request, response);
+            request.getRequestDispatcher("../view/account/login.jsp").forward(request, response);
         }
 
     }
