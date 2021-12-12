@@ -102,10 +102,6 @@ public class ScheduleRepositoryImpl extends BaseRepository implements ScheduleRe
             for (Map.Entry<String, Object> entry : parameters.entrySet()) {
                 query.setParameter(entry.getKey(), entry.getValue());
             }
-//            query.setParameter("teacherNo", teacherNo);
-//            query.setParameter("className", "%" + scheduleRequestDTO.getSearchClassName() + "%");
-//            query.setParameter("courseName", "%" + scheduleRequestDTO.getSearchCourseName() + "%");
-//            query.setParameter("scheduleDate", scheduleRequestDTO.getSearchScheduleDate());
 
             List<Object[]> datas = query.list();
             if (CollectionUtils.isNotEmpty(datas)) {
