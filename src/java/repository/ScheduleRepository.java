@@ -7,8 +7,11 @@ package repository;
 
 import java.util.List;
 import model.ScheduleDTO;
+import model.SearchScheduleRequestDTO;
 
 public interface ScheduleRepository {
 
     List<ScheduleDTO> getListScheduleByTeacherNo(Long teacherNo);
+
+    List<ScheduleDTO> searchScheduleForTeacher(Long teacherNo, SearchScheduleRequestDTO scheduleRequestDTO);
 }

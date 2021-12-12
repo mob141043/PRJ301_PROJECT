@@ -17,7 +17,7 @@
                     <a class="navbar-brand"> Student Attendance Management </a>
                     <a  style="float: right;margin-left: 1460px" href="${pageContext.request.contextPath}/account/logout" class="navbar-brand text-right"> Log Out </a>
                 </div>
-                
+
             </nav>
         </header>
         <br>
@@ -28,48 +28,82 @@
             <div class="container">
                 <h3 class="text-center">List of Schedule</h3>
                 <hr>
-                <div class="container text-right">
+                <div class="container text-left">
+                    <table style="border-spacing: 50px;width: 100%">
+                        <tbody>
+                            <tr>
+                                <td><label for="exampleInputEmail1">Class:</label></td>
+                                <td><label for="exampleInputEmail1">Course:</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" oninput="searchSchedule()" class="form-control" id ="searchClassName" name="searchClass"   style="width: 500px"/></td>
+                                <td><input type="text" oninput="searchSchedule()" class="form-control" id="searchCourseName" name="searchCourse"   style="width: 500px"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container text-left">
+                    <label for="exampleInputEmail1">Schedule Date:</label>
+                    <input type="Date" class="form-control" oninput="searchSchedule()" id="searchScheduleDate" name="searchScheduleDate" style="width: 500px"/>
 
-                    <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Search</a>
-                  
                 </div>
                 <br>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Class</th>
-                            <th>Course</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!--   for (Todo todo: todos) {  -->
-                        <c:set var="index" value="1" scope="session"/>
-                            
-                        <c:forEach var="s" items="${scheduleDTOs}">                            
+                <div id="content">
+                    <table class="table table-bordered">
+                        <thead>
                             <tr>
-                                <td><c:out value="${index}"/></td>
-                                <td><c:out value="${s.className}" /></td>
-                                <td><c:out value="${s.courseName}" /></td>
-                                <td><c:out value="${s.scheduleDate}" /></td>
-                                <td><a href="${pageContext.request.contextPath}/group/student-list?scheduleNo=${s.scheduleNo}&groupNo=${s.groupNo}" />Take Attendance</a>
+                                <th>Index</th>
+                                <th>Class</th>
+                                <th>Course</th>
+                                <th>Date</th>
+                                <th>Action</th>
                             </tr>
-                            <c:set var="index" value="${index + 1}" scope="session"/>
-                        </c:forEach>
-                        <!-- } -->
-                    </tbody>
+                        </thead>
+                        <tbody>
+                            <c:set var="index" value="1" scope="session"/>
 
-                </table>
+                            <c:forEach var="s" items="${scheduleDTOs}">                            
+                                <tr>
+                                    <td><c:out value="${index}"/></td>
+                                    <td><c:out value="${s.className}" /></td>
+                                    <td><c:out value="${s.courseName}" /></td>
+                                    <td><c:out value="${s.scheduleDate}" /></td>
+                                    <td><a href="${pageContext.request.contextPath}/group/student-list?scheduleNo=${s.scheduleNo}&groupNo=${s.groupNo}" />Take Attendance</a>
+                                </tr>
+                                <c:set var="index" value="${index + 1}" scope="session"/>
+                            </c:forEach>
+                        </tbody>
+
+                    </table>
+                </div>
+
                 <br>
-<!--                <div class="container text-right">
-
-                    <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
-                        New User</a>
-                    <span/>
-                </div>-->
             </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function searchSchedule() {
+                var searchClassName = document.getElementById("searchClassName");
+                var searchCourseName = document.getElementById("searchCourseName");
+                var searchScheduleDate = document.getElementById("searchScheduleDate");
+
+                $.ajax({
+                    url: "${pageContext.request.contextPath}/teacher/search-schedule",
+                    type: "POST", //send it through get method
+                    data: {
+                        "searchClassName": searchClassName.value,
+                        "searchCourseName": searchCourseName.value,
+                        "searchScheduleDate": searchScheduleDate.value
+                    },
+                    success: function (data) {
+                        var row = document.getElementById("content");
+                        row.innerHTML = data;
+                    },
+                    error: function (xhr) {
+                        console.log(xhr);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

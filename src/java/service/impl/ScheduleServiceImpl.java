@@ -7,6 +7,7 @@ package service.impl;
 
 import java.util.List;
 import model.ScheduleDTO;
+import model.SearchScheduleRequestDTO;
 import repository.ScheduleRepository;
 import repository.impl.ScheduleRepositoryImpl;
 import service.ScheduleService;
@@ -22,6 +23,11 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Override
     public List<ScheduleDTO> getListScheduleByTeacherNo(Long teacherNo) {
         return scheduleRepository.getListScheduleByTeacherNo(teacherNo);
+    }
+
+    @Override
+    public List<ScheduleDTO> searchScheduleForTeacher(Long teacherNo, SearchScheduleRequestDTO scheduleRequestDTO) {
+        return scheduleRepository.searchScheduleForTeacher(teacherNo, scheduleRequestDTO);
     }
 
 }
